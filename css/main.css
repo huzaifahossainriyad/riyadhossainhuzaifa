@@ -1,200 +1,309 @@
+/*
+ * এই CSS কোডটি রিয়াদ হোসেন হুজাইফার 'গল্পের ভুবন' ওয়েবসাইটটির জন্য ডিজাইন করা হয়েছে।
+ * এটি ওয়েবসাইটের নান্দনিকতা, বিশেষ করে সাদা থিমের উপর জোর দিয়ে তৈরি করা হয়েছে।
+ *
+ * এই ফাইলটি আপনার index.html ফাইলের <head> সেকশনে <style> ট্যাগের মধ্যে অথবা
+ * একটি পৃথক style.css ফাইল হিসেবে লিঙ্ক করে ব্যবহার করা যেতে পারে।
+ *
+ */
+
+/* গ্লোবাল স্টাইল: পুরো ওয়েবসাইটের জন্য ফন্ট, ব্যাকগ্রাউন্ড এবং টেক্সট কালার */
 body {
     font-family: 'Hind Siliguri', sans-serif;
-    background: linear-gradient(to bottom right, #FFFBEB, #E0F7FA); /* Soft yellow to light blue gradient */
-    color: #1a202c; /* gray-900 */
-    line-height: 1.75;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    /* সাদা এবং হালকা নীল রঙের গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড, আপনার পছন্দের সাদা থিমের সাথে সামঞ্জস্যপূর্ণ */
+    background: linear-gradient(to bottom right, #FFFFFF, #F0F8FF); /* Pure White to AliceBlue */
+    color: #2D3748; /* gray-800, নরম টেক্সট কালার */
+    line-height: 1.8; /* আরও ভালো পাঠযোগ্যতার জন্য লাইনের উচ্চতা বাড়ানো হয়েছে */
+    overflow-x: hidden; /* অনুভূমিক স্ক্রল প্রতিরোধ */
 }
+
+/* কন্টেইনার স্টাইল: কনটেন্টকে মাঝখানে রাখা এবং সর্বাধিক প্রস্থ নির্ধারণ */
+.container {
+    max-width: 1024px; /* lg:max-w-4xl এর পরিবর্তে ফিক্সড প্রস্থ ব্যবহার */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* সেকশন কার্ড: প্রতিটি কন্টেন্ট ব্লকের জন্য সাদা ব্যাকগ্রাউন্ড, শ্যাডো এবং বর্ডার-রেডিয়াস */
 .section-card {
-    background-color: white;
-    padding: 1.5rem 2.5rem; /* p-6 md:p-10 */
-    border-radius: 1rem; /* rounded-2xl */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
-    opacity: 0; /* For fade-in animation */
-    transform: translateY(30px); /* For fade-in animation */
+    background-color: #FFFFFF; /* বিশুদ্ধ সাদা */
+    padding: 2rem; /* p-8 */
+    border-radius: 1.5rem; /* rounded-3xl, আরও নরম কোণা */
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.08), 0 8px 12px -4px rgba(0, 0, 0, 0.04); /* উন্নত শ্যাডো */
+    opacity: 0; /* ফেড-ইন অ্যানিমেশনের জন্য */
+    transform: translateY(40px); /* ফেড-ইন অ্যানিমেশনের জন্য */
     animation: fadeInSlideUp 1s forwards ease-out;
     animation-delay: var(--animation-delay, 0s);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+/* সেকশন কার্ড হোভার ইফেক্ট */
+.section-card:hover {
+    transform: translateY(-8px); /* হোভার করলে সামান্য উপরে উঠবে */
+    box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.12), 0 10px 15px -6px rgba(0, 0, 0, 0.06); /* আরও প্রকট শ্যাডো */
+}
+
+/* ফেড-ইন স্লাইড-আপ অ্যানিমেশন */
 @keyframes fadeInSlideUp {
-    from { opacity: 0; transform: translateY(30px); }
+    from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
 }
-.chart-container {
+
+/* হেডার স্টাইল: ওয়েবসাইটের প্রধান শিরোনামের জন্য ব্যাকগ্রাউন্ড, টেক্সট কালার এবং শ্যাডো */
+.main-header {
+    background: linear-gradient(to right, #ADD8E6, #87CEEB); /* হালকা নীল থেকে আকাশী নীল গ্রেডিয়েন্ট */
+    color: #FFFFFF;
+    padding: 3rem 2rem; /* p-12 md:p-16 */
+    border-radius: 1.5rem; /* rounded-3xl */
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 8px 12px -4px rgba(0, 0, 0, 0.08); /* আরও শক্তিশালী শ্যাডো */
+    margin-bottom: 4rem; /* mb-16 */
+    text-align: center;
+    position: relative; /* পর্যায়ক্রমে অ্যানিমেশনের জন্য */
+    overflow: hidden; /* ভেতরের অ্যানিমেটেড ইলিমেন্টের জন্য */
+}
+
+/* হেডার টেক্সট অ্যানিমেশন */
+.main-header h1, .main-header p {
+    animation: textFadeIn 1.5s forwards ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.main-header h1 {
+    animation-delay: 0.3s;
+}
+
+.main-header p {
+    animation-delay: 0.6s;
+}
+
+@keyframes textFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* গল্পের কার্ড স্টাইল: প্রতিটি গল্পের কার্ডের জন্য আলাদা স্টাইল */
+.story-card {
+    background-color: #FFFFFF; /* সাদা ব্যাকগ্রাউন্ড */
+    padding: 1.75rem; /* p-7 */
+    border-radius: 1.25rem; /* rounded-2xl */
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03); /* নরম শ্যাডো */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-decoration: none; /* লিঙ্ক এর আন্ডারলাইন সরানো */
+    display: block; /* পুরো কার্ডকে ক্লিকযোগ্য করতে */
+    height: 100%; /* গ্রিড লেআউটে উচ্চতা সমান রাখতে */
+    border: 1px solid #F0F8FF; /* হালকা বর্ডার */
+}
+
+/* গল্পের কার্ড হোভার ইফেক্ট */
+.story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.1), 0 6px 10px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* গল্পের কার্ড শিরোনাম */
+.story-card h3 {
+    color: #2C5282; /* ডার্ক ব্লু, একটি শক্তিশালী টোন */
+    font-size: 1.75rem; /* 2xl */
+    font-weight: 700; /* bold */
+    margin-bottom: 0.75rem; /* mb-3 */
+}
+
+/* গল্পের কার্ড বর্ণনা */
+.story-card p {
+    color: #4A5568; /* নরম ধূসর */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Read More বাটন স্টাইল */
+.btn-read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #4299E1; /* Tailwind blue-500, একটি উজ্জ্বল নীল */
+    color: white;
+    font-weight: 600; /* semi-bold */
+    padding: 0.75rem 1.5rem; /* py-3 px-6 */
+    border-radius: 9999px; /* rounded-full */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Read More বাটন হোভার ইফেক্ট */
+.btn-read-more:hover {
+    background-color: #3182CE; /* Tailwind blue-600 */
+    transform: scale(1.05);
+}
+
+/* সেকশন শিরোনাম */
+h2 {
+    font-size: 2.5rem; /* 4xl */
+    font-weight: 800; /* extra-bold */
+    color: #2D3748; /* gray-800 */
+    text-align: center;
+    margin-bottom: 3rem; /* mb-12 */
     position: relative;
-    width: 100%;
-    max-width: 400px; /* Limits chart width on larger screens */
-    margin-left: auto;
-    margin-right: auto;
-    height: 300px; /* Base height for mobile */
-    max-height: 400px; /* Max height to prevent excessive size */
-    transition: transform 0.3s ease-in-out;
+    padding-bottom: 0.5rem; /* আন্ডারলাইনের জন্য জায়গা */
 }
-.chart-container:hover {
-    transform: scale(1.03);
+
+/* সেকশন শিরোনামের আন্ডারলাইন ইফেক্ট */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px; /* আন্ডারলাইনের প্রস্থ */
+    height: 4px;
+    background-color: #4299E1; /* নীল রঙের আন্ডারলাইন */
+    margin: 0.5rem auto 0; /* মাঝখানে রাখা */
+    border-radius: 2px;
 }
-@media (min-width: 768px) { /* Medium screens and up */
-    .chart-container {
-        height: 350px;
+
+/* ফুটার স্টাইল */
+footer {
+    text-align: center;
+    margin-top: 5rem; /* mt-20 */
+    padding-bottom: 2rem;
+    color: #718096; /* নরম ধূসর */
+    font-size: 1.1rem;
+}
+
+footer .font-bold {
+    color: #2D3748; /* গাঢ় ধূসর */
+}
+
+/* নতুন সংযোজিত About Me সেকশনের জন্য স্টাইল */
+.about-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.about-section h2 {
+    margin-bottom: 2rem;
+}
+
+.about-content p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+    color: #4A5568;
+}
+
+.contact-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #4A5568;
+}
+
+.contact-info div svg {
+    margin-right: 0.75rem;
+    color: #4299E1; /* আইকন কালার */
+    font-size: 1.5rem;
+}
+
+.contact-info a {
+    color: #4299E1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #3182CE;
+}
+
+/* ক্যাটাগরি ফিল্টার বাটনগুলোর জন্য স্টাইল */
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem; /* প্রতিটি বাটনের মধ্যে দূরত্ব */
+    margin-bottom: 3rem; /* গল্পের তালিকার উপরে */
+    padding: 0.5rem;
+    background-color: #F8F8F8; /* হালকা ধূসর ব্যাকগ্রাউন্ড */
+    border-radius: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* ইনসেট শ্যাডো */
+}
+
+.category-btn {
+    background-color: #E0F8FF; /* হালকা নীল */
+    color: #2C5282; /* ডার্ক ব্লু টেক্সট */
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px; /* সম্পূর্ণ গোলাকার */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #ADD8E6; /* হালকা নীল বর্ডার */
+}
+
+.category-btn:hover:not(.active-category) {
+    background-color: #ADD8E6; /* হোভারে একটু গাঢ় নীল */
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-btn.active-category {
+    background-color: #4299E1; /* সক্রিয় বাটনের জন্য উজ্জ্বল নীল */
+    color: white;
+    border-color: #4299E1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+
+/* মোবাইল রেসপন্সিভনেস */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .main-header h1 {
+        font-size: 2.5rem; /* ছোট স্ক্রিনের জন্য ফন্ট সাইজ কমানো */
+    }
+
+    .main-header p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .story-card {
+        padding: 1.25rem;
+        border-radius: 1rem;
+    }
+
+    .story-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .btn-read-more {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .category-filter {
+        flex-direction: column; /* ছোট স্ক্রিনে বাটনগুলো উল্লম্বভাবে সাজানো */
+        align-items: center;
+    }
+
+    .category-btn {
+        width: 90%; /* ছোট স্ক্রিনে বাটনের প্রস্থ বাড়ানো */
+        margin-bottom: 0.5rem;
+    }
+
+    .section-card {
+        padding: 1.5rem;
+        border-radius: 1.25rem;
     }
 }
-.btn-primary {
-    @apply bg-sky-700 hover:bg-sky-800 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105;
-}
-.btn-secondary {
-    @apply bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105;
-}
-.tab-btn {
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 9999px; /* rounded-full */
-    border-width: 2px;
-}
-.tab-btn.active {
-    background-color: #0369a1; /* sky-700 */
-    color: white;
-    border-color: #0369a1;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-.tab-btn:not(.active) {
-    background-color: white;
-    color: #0369a1;
-    border-color: #0369a1;
-}
-.tab-btn:hover:not(.active) {
-    background-color: #e0f2fe; /* sky-50 */
-}
-.progress-bar-inner {
-    background-color: #0369a1; /* sky-700 */
-    animation: fill-progress 2s ease-in-out forwards;
-}
-@keyframes fill-progress {
-    from { width: 0%; }
-    to { width: 50%; } /* Represents ongoing journey, not full completion */
-}
-.icon {
-    display: inline-block;
-    font-size: 1.2em;
-    margin-right: 0.2em;
-    vertical-align: middle;
-}
-/* Modal Styles */
-.modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 1rem;
-    animation: modalFadeIn 0.3s ease-out;
-}
-.modal-content {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 0.75rem;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
-    animation: modalSlideUp 0.3s ease-out;
-    max-height: 90vh; /* Limit modal height */
-    overflow-y: auto; /* Enable scrolling for modal content */
-}
-.modal-close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    color: #aaa;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    background: none;
-    padding: 0;
-}
-.modal-close-btn:hover,
-.modal-close-btn:focus {
-    color: #333;
-    text-decoration: none;
-    cursor: pointer;
-}
-@keyframes modalFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-@keyframes modalSlideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
 
-/* Chatbot FAB */
-.chatbot-fab {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: #10b981; /* emerald-500 */
-    color: white;
-    border-radius: 9999px;
-    padding: 1.25rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    cursor: pointer;
-    z-index: 999;
-    transition: transform 0.3s ease-in-out;
-}
-.chatbot-fab:hover {
-    transform: scale(1.1);
-}
-
-/* Chatbot Modal specific styles */
-#chatModal .modal-content {
-    max-width: 600px;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-}
-#chatDisplay {
-    flex-grow: 1;
-    overflow-y: auto;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background-color: #f8fafc;
-}
-.chat-message {
-    margin-bottom: 0.75rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.5rem;
-    word-wrap: break-word;
-}
-.chat-message.user {
-    background-color: #eff6ff; /* blue-50 */
-    text-align: right;
-    margin-left: auto;
-    max-width: 85%;
-}
-.chat-message.ai {
-    background-color: #ecfdf5; /* emerald-50 */
-    text-align: left;
-    margin-right: auto;
-    max-width: 85%;
-}
-#chatInputForm {
-    display: flex;
-    gap: 0.5rem;
-}
-#chatInput {
-    flex-grow: 1;
-    border: 1px solid #cbd5e0;
-    border-radius: 0.5rem;
-    padding: 0.75rem;
-}
-#chatSubmitBtn {
-    @apply bg-sky-700 hover:bg-sky-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105;
-}
