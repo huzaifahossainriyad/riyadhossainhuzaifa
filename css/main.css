@@ -1,308 +1,358 @@
 /*
- * এই CSS কোডটি রিয়াদ হোসেন হুজাইফার 'গল্পের ভুবন' ওয়েবসাইটটির জন্য ডিজাইন করা হয়েছে।
- * এটি ওয়েবসাইটের নান্দনিকতা, বিশেষ করে সাদা থিমের উপর জোর দিয়ে তৈরি করা হয়েছে।
+ * এই CSS কোডটি রিয়াদ হোসেন হুজাইফার 'কল্পনার দিগন্তে: রিয়াদের গল্প' ওয়েবসাইটটির জন্য তৈরি করা হয়েছে।
+ * এটি একটি পরিষ্কার, আধুনিক এবং চোখ ধাঁধানো ডিজাইন প্রদান করবে।
  *
- * এই ফাইলটি আপনার index.html ফাইলের <head> সেকশনে <style> ট্যাগের মধ্যে অথবা
- * একটি পৃথক style.css ফাইল হিসেবে লিঙ্ক করে ব্যবহার করা যেতে পারে।
+ * এই ফাইলটি আপনার 'css' ফোল্ডারের মধ্যে 'main.css' নামে সেভ করবেন।
  *
  */
 
-/* গ্লোবাল স্টাইল: পুরো ওয়েবসাইটের জন্য ফন্ট, ব্যাকগ্রাউন্ড এবং টেক্সট কালার */
+/* গ্লোবাল স্টাইল এবং বডি ব্যাকগ্রাউন্ড */
 body {
     font-family: 'Hind Siliguri', sans-serif;
-    /* সাদা এবং হালকা নীল রঙের গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড, আপনার পছন্দের সাদা থিমের সাথে সামঞ্জস্যপূর্ণ */
-    background: linear-gradient(to bottom right, #FFFFFF, #F0F8FF); /* Pure White to AliceBlue */
-    color: #2D3748; /* gray-800, নরম টেক্সট কালার */
-    line-height: 1.8; /* আরও ভালো পাঠযোগ্যতার জন্য লাইনের উচ্চতা বাড়ানো হয়েছে */
+    /* নরম, সতেজ এবং হালকা গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
+    background: linear-gradient(to bottom right, #E8F5FF, #FFFFFF); /* হালকা নীল থেকে বিশুদ্ধ সাদা */
+    color: #333333; /* গাঢ় ধূসর টেক্সট কালার, পড়তে সহজ */
+    line-height: 1.8; /* পাঠযোগ্যতার জন্য লাইনের উচ্চতা বাড়ানো */
     overflow-x: hidden; /* অনুভূমিক স্ক্রল প্রতিরোধ */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* কন্টেইনার স্টাইল: কনটেন্টকে মাঝখানে রাখা এবং সর্বাধিক প্রস্থ নির্ধারণ */
+/* কন্টেইনার: কন্টেন্টকে মাঝখানে রাখা এবং সর্বাধিক প্রস্থ নির্ধারণ */
 .container {
-    max-width: 1024px; /* lg:max-w-4xl এর পরিবর্তে ফিক্সড প্রস্থ ব্যবহার */
+    max-width: 1100px; /* আরও প্রশস্ত লেআউট */
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1.5rem; /* সব দিক থেকে প্যাডিং */
 }
 
-/* সেকশন কার্ড: প্রতিটি কন্টেন্ট ব্লকের জন্য সাদা ব্যাকগ্রাউন্ড, শ্যাডো এবং বর্ডার-রেডিয়াস */
+/* সেকশন কার্ড: প্রতিটি কন্টেন্ট ব্লকের জন্য পরিষ্কার সাদা ব্যাকগ্রাউন্ড এবং উন্নত শ্যাডো */
 .section-card {
     background-color: #FFFFFF; /* বিশুদ্ধ সাদা */
-    padding: 2rem; /* p-8 */
-    border-radius: 1.5rem; /* rounded-3xl, আরও নরম কোণা */
-    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.08), 0 8px 12px -4px rgba(0, 0, 0, 0.04); /* উন্নত শ্যাডো */
+    padding: 3rem; /* আরও বেশি প্যাডিং, p-12 */
+    border-radius: 1.5rem; /* নরম গোলাকার কোণা */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); /* আরও গভীর এবং সুন্দর শ্যাডো */
     opacity: 0; /* ফেড-ইন অ্যানিমেশনের জন্য */
-    transform: translateY(40px); /* ফেড-ইন অ্যানিমেশনের জন্য */
+    transform: translateY(50px); /* ফেড-ইন অ্যানিমেশনের জন্য */
     animation: fadeInSlideUp 1s forwards ease-out;
     animation-delay: var(--animation-delay, 0s);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    border: 1px solid #F0F8FF; /* খুব হালকা বর্ডার */
 }
 
 /* সেকশন কার্ড হোভার ইফেক্ট */
 .section-card:hover {
-    transform: translateY(-8px); /* হোভার করলে সামান্য উপরে উঠবে */
-    box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.12), 0 10px 15px -6px rgba(0, 0, 0, 0.06); /* আরও প্রকট শ্যাডো */
+    transform: translateY(-10px); /* হোভার করলে আরও উপরে উঠবে */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15); /* হোভারে আরও প্রকট শ্যাডো */
 }
 
 /* ফেড-ইন স্লাইড-আপ অ্যানিমেশন */
 @keyframes fadeInSlideUp {
-    from { opacity: 0; transform: translateY(40px); }
+    from { opacity: 0; transform: translateY(50px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* হেডার স্টাইল: ওয়েবসাইটের প্রধান শিরোনামের জন্য ব্যাকগ্রাউন্ড, টেক্সট কালার এবং শ্যাডো */
+/* হেডার স্টাইল: ওয়েবসাইটের প্রধান শিরোনামের জন্য আকর্ষণীয় ব্যাকগ্রাউন্ড */
 .main-header {
-    background: linear-gradient(to right, #ADD8E6, #87CEEB); /* হালকা নীল থেকে আকাশী নীল গ্রেডিয়েন্ট */
+    background: linear-gradient(to right, #6EE7B7, #3B82F6); /* সতেজ সবুজ-নীল গ্রেডিয়েন্ট */
     color: #FFFFFF;
-    padding: 3rem 2rem; /* p-12 md:p-16 */
-    border-radius: 1.5rem; /* rounded-3xl */
-    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 8px 12px -4px rgba(0, 0, 0, 0.08); /* আরও শক্তিশালী শ্যাডো */
-    margin-bottom: 4rem; /* mb-16 */
+    padding: 4rem 2rem; /* বড় প্যাডিং */
+    border-radius: 2rem; /* আরও গোলাকার কোণা */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); /* শক্তিশালী শ্যাডো */
+    margin-bottom: 5rem; /* বেশি স্পেস */
     text-align: center;
-    position: relative; /* পর্যায়ক্রমে অ্যানিমেশনের জন্য */
-    overflow: hidden; /* ভেতরের অ্যানিমেটেড ইলিমেন্টের জন্য */
+    position: relative;
+    overflow: hidden;
+    animation: headerFadeIn 1.5s forwards ease-out; /* হেডার অ্যানিমেশন */
+}
+
+@keyframes headerFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 /* হেডার টেক্সট অ্যানিমেশন */
-.main-header h1, .main-header p {
-    animation: textFadeIn 1.5s forwards ease-out;
+.main-header h1 {
+    font-size: 3.5rem; /* খুব বড় শিরোনাম */
+    font-weight: 900; /* Extra bold */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    animation: textPopIn 1.5s forwards ease-out;
+    animation-delay: 0.5s;
     opacity: 0;
     transform: translateY(20px);
 }
 
-.main-header h1 {
-    animation-delay: 0.3s;
-}
-
 .main-header p {
-    animation-delay: 0.6s;
+    font-size: 1.25rem; /* একটু বড় বর্ণনা */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: textPopIn 1.5s forwards ease-out;
+    animation-delay: 0.8s;
 }
 
-@keyframes textFadeIn {
+@keyframes textPopIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* গল্পের কার্ড স্টাইল: প্রতিটি গল্পের কার্ডের জন্য আলাদা স্টাইল */
+/* গল্পের কার্ড স্টাইল: প্রতিটি গল্পের কার্ডের জন্য সুন্দর ডিজাইন */
 .story-card {
     background-color: #FFFFFF; /* সাদা ব্যাকগ্রাউন্ড */
-    padding: 1.75rem; /* p-7 */
-    border-radius: 1.25rem; /* rounded-2xl */
-    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03); /* নরম শ্যাডো */
+    padding: 2rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* হালকা শ্যাডো */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    text-decoration: none; /* লিঙ্ক এর আন্ডারলাইন সরানো */
-    display: block; /* পুরো কার্ডকে ক্লিকযোগ্য করতে */
-    height: 100%; /* গ্রিড লেআউটে উচ্চতা সমান রাখতে */
-    border: 1px solid #F0F8FF; /* হালকা বর্ডার */
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    border: 1px solid #E0E0E0; /* নরম ধূসর বর্ডার */
 }
 
 /* গল্পের কার্ড হোভার ইফেক্ট */
 .story-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.1), 0 6px 10px -3px rgba(0, 0, 0, 0.05);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* গল্পের কার্ড শিরোনাম */
 .story-card h3 {
-    color: #2C5282; /* ডার্ক ব্লু, একটি শক্তিশালী টোন */
-    font-size: 1.75rem; /* 2xl */
-    font-weight: 700; /* bold */
-    margin-bottom: 0.75rem; /* mb-3 */
+    color: #0F52BA; /* গাঢ় নীল শিরোনাম */
+    font-size: 2rem; /* বড় শিরোনাম */
+    font-weight: 700; /* বোল্ড */
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
 }
 
 /* গল্পের কার্ড বর্ণনা */
 .story-card p {
-    color: #4A5568; /* নরম ধূসর */
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    color: #555555; /* নরম ধূসর বর্ণনা */
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
 }
 
 /* Read More বাটন স্টাইল */
 .btn-read-more {
     display: inline-block;
     margin-top: 1rem;
-    background-color: #4299E1; /* Tailwind blue-500, একটি উজ্জ্বল নীল */
+    background-color: #4299E1; /* উজ্জ্বল নীল */
     color: white;
-    font-weight: 600; /* semi-bold */
-    padding: 0.75rem 1.5rem; /* py-3 px-6 */
-    border-radius: 9999px; /* rounded-full */
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem; /* আরও প্যাডিং */
+    border-radius: 9999px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Read More বাটন হোভার ইফেক্ট */
 .btn-read-more:hover {
-    background-color: #3182CE; /* Tailwind blue-600 */
-    transform: scale(1.05);
+    background-color: #3182CE;
+    transform: scale(1.08); /* হোভারে আরও বেশি স্কেল */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* সেকশন শিরোনাম */
 h2 {
-    font-size: 2.5rem; /* 4xl */
-    font-weight: 800; /* extra-bold */
-    color: #2D3748; /* gray-800 */
+    font-size: 3rem; /* খুব বড় শিরোনাম */
+    font-weight: 800; /* Extra bold */
+    color: #2D3748;
     text-align: center;
-    margin-bottom: 3rem; /* mb-12 */
+    margin-bottom: 3.5rem; /* আরও বেশি স্পেস */
     position: relative;
-    padding-bottom: 0.5rem; /* আন্ডারলাইনের জন্য জায়গা */
+    padding-bottom: 0.75rem; /* আন্ডারলাইনের জন্য জায়গা */
 }
 
 /* সেকশন শিরোনামের আন্ডারলাইন ইফেক্ট */
 h2::after {
     content: '';
     display: block;
-    width: 60px; /* আন্ডারলাইনের প্রস্থ */
-    height: 4px;
-    background-color: #4299E1; /* নীল রঙের আন্ডারলাইন */
-    margin: 0.5rem auto 0; /* মাঝখানে রাখা */
-    border-radius: 2px;
+    width: 80px; /* আন্ডারলাইনের প্রস্থ বাড়ানো */
+    height: 5px; /* আন্ডারলাইনের উচ্চতা বাড়ানো */
+    background-color: #3B82F6; /* উজ্জ্বল নীল আন্ডারলাইন */
+    margin: 0.75rem auto 0;
+    border-radius: 3px;
 }
 
 /* ফুটার স্টাইল */
 footer {
     text-align: center;
-    margin-top: 5rem; /* mt-20 */
-    padding-bottom: 2rem;
-    color: #718096; /* নরম ধূসর */
-    font-size: 1.1rem;
+    margin-top: 6rem; /* আরও বেশি মার্জিন */
+    padding-bottom: 2.5rem;
+    color: #777777; /* নরম ধূসর */
+    font-size: 1rem;
 }
 
 footer .font-bold {
-    color: #2D3748; /* গাঢ় ধূসর */
+    color: #444444; /* গাঢ় ধূসর */
 }
 
-/* নতুন সংযোজিত About Me সেকশনের জন্য স্টাইল */
+/* আমার সম্পর্কে সেকশন */
 .about-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-.about-section h2 {
-    margin-bottom: 2rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
 }
 
 .about-content p {
-    margin-bottom: 1.25rem;
-    line-height: 1.7;
+    margin-bottom: 1.5rem; /* অনুচ্ছেদগুলির মধ্যে বেশি স্পেস */
+    line-height: 1.8;
     color: #4A5568;
 }
 
+/* বোল্ড টেক্সট হাইলাইট */
+.about-content p strong {
+    font-weight: 700; /* আরও বোল্ড */
+    color: #3B82F6; /* নীল হাইলাইট */
+}
+
+/* যোগাযোগ সেকশন */
 .contact-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
 }
 
 .contact-info div {
     display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
+    align-items: flex-start; /* আইকন এবং টেক্সট অ্যালাইনমেন্ট */
+    margin-bottom: 1.25rem; /* প্রতিটি আইটেমের মধ্যে স্পেস */
     color: #4A5568;
+    font-size: 1.1rem;
 }
 
 .contact-info div svg {
-    margin-right: 0.75rem;
-    color: #4299E1; /* আইকন কালার */
-    font-size: 1.5rem;
+    flex-shrink: 0; /* আইকন ছোট হবে না */
+    margin-right: 1rem; /* আইকন এবং টেক্সটের মধ্যে স্পেস */
+    color: #3B82F6; /* উজ্জ্বল নীল আইকন */
+    font-size: 1.8rem; /* আইকনের আকার বাড়ানো */
 }
 
 .contact-info a {
-    color: #4299E1;
+    color: #3B82F6;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 600; /* লিঙ্ক বোল্ড করা */
 }
 
 .contact-info a:hover {
-    color: #3182CE;
+    color: #2563EB;
+    text-decoration: underline; /* হোভারে আন্ডারলাইন */
 }
 
-/* ক্যাটাগরি ফিল্টার বাটনগুলোর জন্য স্টাইল */
+/* ক্যাটাগরি ফিল্টার বাটন */
 .category-filter {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem; /* প্রতিটি বাটনের মধ্যে দূরত্ব */
-    margin-bottom: 3rem; /* গল্পের তালিকার উপরে */
-    padding: 0.5rem;
+    gap: 1rem; /* প্রতিটি বাটনের মধ্যে দূরত্ব */
+    margin-bottom: 4rem; /* গল্পের তালিকার উপরে বেশি স্পেস */
+    padding: 1rem;
     background-color: #F8F8F8; /* হালকা ধূসর ব্যাকগ্রাউন্ড */
-    border-radius: 1rem;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* ইনসেট শ্যাডো */
+    border-radius: 1.5rem; /* নরম কোণা */
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05); /* ইনসেট শ্যাডো */
 }
 
 .category-btn {
     background-color: #E0F8FF; /* হালকা নীল */
-    color: #2C5282; /* ডার্ক ব্লু টেক্সট */
-    padding: 0.75rem 1.5rem;
+    color: #2C5282; /* গাঢ় নীল টেক্সট */
+    padding: 0.9rem 2rem; /* আরও প্যাডিং */
     border-radius: 9999px; /* সম্পূর্ণ গোলাকার */
-    font-weight: 600;
+    font-weight: 700; /* বোল্ড টেক্সট */
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid #ADD8E6; /* হালকা নীল বর্ডার */
+    text-transform: capitalize; /* প্রথম অক্ষর বড় হাতের */
+    letter-spacing: 0.5px; /* অক্ষরের মধ্যে সামান্য স্পেস */
 }
 
 .category-btn:hover:not(.active-category) {
     background-color: #ADD8E6; /* হোভারে একটু গাঢ় নীল */
     color: #FFFFFF;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px); /* হোভারে সামান্য উপরে উঠবে */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* হোভারে শ্যাডো */
 }
 
 .category-btn.active-category {
-    background-color: #4299E1; /* সক্রিয় বাটনের জন্য উজ্জ্বল নীল */
+    background-color: #3B82F6; /* সক্রিয় বাটনের জন্য উজ্জ্বল নীল */
     color: white;
-    border-color: #4299E1;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px);
+    border-color: #3B82F6;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px); /* সক্রিয় অবস্থায় আরও উপরে উঠবে */
 }
-
 
 /* মোবাইল রেসপন্সিভনেস */
 @media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
     .main-header {
-        padding: 2rem 1rem;
-        margin-bottom: 2rem;
+        padding: 2.5rem 1rem;
+        margin-bottom: 3rem;
+        border-radius: 1.5rem;
     }
 
     .main-header h1 {
-        font-size: 2.5rem; /* ছোট স্ক্রিনের জন্য ফন্ট সাইজ কমানো */
+        font-size: 2.8rem;
     }
 
     .main-header p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
     }
 
-    .story-card {
-        padding: 1.25rem;
-        border-radius: 1rem;
-    }
-
-    .story-card h3 {
-        font-size: 1.5rem;
-    }
-
-    .btn-read-more {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-
-    .category-filter {
-        flex-direction: column; /* ছোট স্ক্রিনে বাটনগুলো উল্লম্বভাবে সাজানো */
-        align-items: center;
-    }
-
-    .category-btn {
-        width: 90%; /* ছোট স্ক্রিনে বাটনের প্রস্থ বাড়ানো */
-        margin-bottom: 0.5rem;
+    h2::after {
+        width: 50px;
+        height: 4px;
     }
 
     .section-card {
         padding: 1.5rem;
-        border-radius: 1.25rem;
+        border-radius: 1rem;
+    }
+
+    .story-card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .story-card h3 {
+        font-size: 1.7rem;
+    }
+
+    .story-card p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-read-more {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+    }
+
+    .category-filter {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .category-btn {
+        width: 100%; /* ছোট স্ক্রিনে বাটনের প্রস্থ সম্পূর্ণ */
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .contact-info div {
+        flex-direction: column; /* ছোট স্ক্রিনে উল্লম্ব বিন্যাস */
+        align-items: flex-start;
+    }
+    .contact-info div svg {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
     }
 }
