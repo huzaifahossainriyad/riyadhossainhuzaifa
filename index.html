@@ -8,15 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- আপনার main.css ফাইলটির লিঙ্ক -->
+    <!-- আপনার main.css ফাইলটির লিঙ্ক, নিশ্চিত করুন যে এটি সঠিক ফোল্ডারে আছে -->
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <main class="container mx-auto px-4 py-8 md:py-12">
         <!-- ওয়েবসাইট হেডার -->
         <header class="main-header">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">✨ কল্পনার দিগন্তে: রিয়াদের গল্প 📚</h1>
-            <p class="text-lg md:text-xl mx-auto opacity-90 max-w-2xl">রিয়াদ হোসেন হুজাইফা রচিত ও সংগৃহীত বিচিত্র সব গল্প, উপন্যাস এবং জীবন থেকে নেওয়া অভিজ্ঞতা নিয়ে এক অসাধারণ সংকলন।</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">✨ অনুভূতির ক্যানভাস: রিয়াদের গল্প সংকলন 🎨</h1>
+            <p class="text-lg md:text-xl mx-auto opacity-90 max-w-2xl">জীবনের গল্প, কল্পনার উড়ান আর অনুভূতির প্রকাশ - যেখানে প্রতিটি লেখা এক নতুন দিগন্ত।</p>
         </header>
 
         <!-- About Me সেকশন -->
@@ -46,23 +46,22 @@
             <!-- ক্যাটাগরি ফিল্টার বাটন -->
             <div class="category-filter" id="categoryFilter">
                 <button class="category-btn active-category" data-category="all">সব গল্প</button>
+                <button class="category-btn" data-category="mix-life-based">মিশরন / জীবনভিত্তিক</button>
                 <button class="category-btn" data-category="facebook">ফেসবুক থেকে সংগৃহীত</button>
                 <button class="category-btn" data-category="ai">এআই দ্বারা নির্মিত</button>
-                <button class="category-btn" data-category="original">আমার রচিত</button>
-                <button class="category-btn" data-category="life-based">জীবনভিত্তিক</button>
             </div>
 
             <!-- গল্পের কার্ডের গ্রিড -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="storyList">
-                <!-- গল্পের কার্ড ১: আলোর খোঁজে মনি -->
-                <a href="moni-story.html" class="story-card" data-category="original life-based">
+                <!-- গল্পের কার্ড ১: আলোর খোঁজে মনি (মিশরন / জীবনভিত্তিক) -->
+                <a href="moni-story.html" class="story-card" data-category="mix-life-based">
                     <h3 class="text-2xl font-semibold mb-2">আলোর খোঁজে মনি 🌟</h3>
                     <p class="text-gray-700 mb-4">একটি মেয়ের অদম্য সংগ্রাম, ভাইয়ের ভবিষ্যৎ এবং ভালোবাসার এক অনুপ্রেরণামূলক গল্প।</p>
                     <span class="btn-read-more">গল্পটি পড়ুন →</span>
                 </a>
 
                 <!-- গল্পের কার্ড ২: ফেসবুক থেকে নেওয়া একটি গল্প (উদাহরণ) -->
-                <a href="#" class="story-card" data-category="facebook life-based">
+                <a href="#" class="story-card" data-category="facebook">
                     <h3 class="text-2xl font-semibold mb-2">ফেসবুক থেকে সেরা গল্প 📖</h3>
                     <p class="text-gray-700 mb-4">ফেসবুকের জনপ্রিয় একটি বাস্তব জীবনের গল্প, যা আপনাকে ভাবাবে।</p>
                     <span class="btn-read-more">গল্পটি পড়ুন →</span>
@@ -75,12 +74,14 @@
                     <span class="btn-read-more">গল্পটি পড়ুন →</span>
                 </a>
 
-                <!-- আরও গল্প যোগ করুন এই ফরম্যাট ব্যবহার করে -->
-                <!-- <a href="#" class="story-card" data-category="your-category-here">
-                    <h3 class="text-2xl font-semibold mb-2">আপনার গল্পের শিরোনাম</h3>
-                    <p class="text-gray-700 mb-4">আপনার গল্পের সংক্ষিপ্ত বর্ণনা।</p>
+                <!-- নতুন গল্প যোগ করার জন্য এই ফরম্যাট ব্যবহার করুন -->
+                <!--
+                <a href="your-story-link.html" class="story-card" data-category="mix-life-based">
+                    <h3 class="text-2xl font-semibold mb-2">আপনার নতুন গল্পের শিরোনাম</h3>
+                    <p class="text-gray-700 mb-4">এখানে আপনার নতুন গল্পের সংক্ষিপ্ত বর্ণনা লিখুন।</p>
                     <span class="btn-read-more">গল্পটি পড়ুন →</span>
-                </a> -->
+                </a>
+                -->
             </div>
         </section>
 
@@ -91,17 +92,17 @@
                 <p class="text-lg mb-4">আপনার যেকোনো প্রশ্ন, পরামর্শ বা সহযোগিতার জন্য নির্দ্বিধায় যোগাযোগ করুন। আমি আপনার সাথে যুক্ত হতে পেরে আনন্দিত হব।</p>
                 <div class="contact-info">
                     <div class="flex items-center">
-                        <!-- ইমেল আইকন -->
+                        <!-- ইমেল আইকন (SVG) -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                         <p class="text-lg">ইমেল: <a href="mailto:huzaifahossainriyad@duck.com" class="font-semibold">huzaifahossainriyad@duck.com</a></p>
                     </div>
                     <div class="flex items-center">
-                        <!-- ফোন আইকন -->
+                        <!-- ফোন আইকন (SVG) -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.65A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                         <p class="text-lg">ফোন/হোয়াটসঅ্যাপ: <a href="tel:+8801910112001" class="font-semibold">+8801910112001</a></p>
                     </div>
                     <div class="flex items-center">
-                        <!-- ফেসবুক আইকন -->
+                        <!-- ফেসবুক আইকন (SVG) -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                         <p class="text-lg">ফেসবুক: <a href="https://facebook.com/riyadhossainhuzaifa.humayra" target="_blank" rel="noopener noreferrer" class="font-semibold">facebook.com/riyadhossainhuzaifa.humayra</a></p>
                     </div>
@@ -111,7 +112,7 @@
 
         <!-- ফুটার -->
         <footer class="text-center mt-16 pb-8">
-            <p class="text-gray-600 text-lg">এই ওয়েবসাইটটি ডিজাইন করেছেন: <span class="font-bold text-gray-700">রিয়াদ হোসেন হুজাইফা</span>, ১০-০৬-২০২৫ ০৯:২০PM</p>
+            <p class="text-gray-600 text-lg">এই ওয়েবসাইটটি ডিজাইন করেছেন: <span class="font-bold text-gray-700">রিয়াদ হোসেন হুজাইফা</span>, <span class="font-bold text-gray-700">১০-০৬-২০২৫ ০৯:২০ PM</span></p>
         </footer>
 
     </main>
@@ -138,6 +139,7 @@
 
                         // গল্পের কার্ডগুলো ফিল্টার করুন
                         storyCards.forEach(card => {
+                            // একাধিক ক্যাটাগরি থাকলে স্পেস দিয়ে আলাদা করা হয়, তাই includes() ব্যবহার করা হয়েছে
                             if (category === 'all' || card.dataset.category.includes(category)) {
                                 card.style.display = 'block'; // দেখান
                             } else {
